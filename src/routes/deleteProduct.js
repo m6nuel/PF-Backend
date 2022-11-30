@@ -1,6 +1,5 @@
 const { Router } = require('express');
 const { deleteProduct } = require('../controllers/deleteProduct');
-// const Producto = require('../models/Producto');
 
 const router = Router();
 
