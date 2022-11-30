@@ -1,14 +1,18 @@
-// const { Router } = require('express');
+const { Router } = require('express');
+const { deleteProduct } = require('../controllers/deleteProduct');
 // const Producto = require('../models/Producto');
 
-// const router = Router();
+const router = Router();
 
-// router.delete('/:id', async (req, res) => {
-//     let { id } = req.params; 
-//     let data = await Producto.destroy()
+router.delete('/:id', async (req, res) => {
+    let {id} = req.params;
+    try {
+        let deleteP = await deleteProduct(id)
+        console.log(deleteP)
+        res.send('Producto eliminado');
+    } catch (error) {
+        
+    }
+})
 
-//     console.log(data)
-
-// })
-
-// module.exports = router;
+module.exports = router;
