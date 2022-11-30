@@ -4,6 +4,8 @@ const { Router } = require('express');
 
 const getProduct = require('./getProduct');
 const createProduct = require('./createProduct');
+const getProductById = require('./getProductById');
+const deleteProduct = require('./deleteProduct')
 
 
 const router = Router();
@@ -13,6 +15,8 @@ const router = Router();
 
 router.use('/productos', getProduct);
 router.use('/producto', createProduct);
+router.use('/producto', getProductById);
+router.use('/producto', deleteProduct);
 
 
 module.exports = router;
